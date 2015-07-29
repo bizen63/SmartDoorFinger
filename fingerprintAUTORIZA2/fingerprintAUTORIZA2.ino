@@ -1,9 +1,5 @@
 /*************************************************** 
- Programa para control inteligente de una puerta con sistema de 
- apertura y cierre por servomotor y que utiliza display LCD para 
- visualizar los mensajes. La unica huella autorizada se corresponde
- con el ID 1
- El conexionado se deduce de los comentarios del codigo
+ 
  ****************************************************/
 int verde = 6; // Conectar salida digital 6 a led verde
 int rojo = 7; // Conectar salida digital 7 a led rojo
@@ -34,7 +30,8 @@ void setup()
  lcd.begin(16,2); //Para arduino UNO A4 (SDA), A5 (SCL)
  myservo.attach(12); // asocia el servo al pin 12
  myservo.write(angulo);
-  
+  pinMode(verde, OUTPUT);
+  pinMode(rojo, OUTPUT);
   Serial.println("fingertest");
 
   // set the data rate for the sensor serial port
